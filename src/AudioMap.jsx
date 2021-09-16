@@ -10,14 +10,7 @@ import mapcordinates from "./data/jasondata.json";
 
 class App extends Component {
 
-  Player = () => (
-    <AudioPlayer
-      autoPlay
-      src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-      onPlay={e => console.log("onPlay")}
-    // other props here
-    />
-  );
+  
 
 
 
@@ -39,7 +32,12 @@ class App extends Component {
                 </h2>
                 <h4>{"Category: " + cord.category}</h4>
                 <p>{"Uploaded by: " + cord['data_uploaded by']}</p>
-                {this.Player()}
+                {<AudioPlayer
+      autoPlay
+      src = {cord.src}
+      onPlay={e => console.log("onPlay")}
+    // other props here
+    />}
               </div>
             </Popup>
           </Marker>
